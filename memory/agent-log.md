@@ -21,4 +21,5 @@ STATE: task=归档封存+推送GitHub | level=L2-F | route=完整9步(文档写�
 
 ## 流水区
 
-- 2026-10-08 归档任务：通读全部项目文件 → git init(main) + .gitignore/.gitattributes + 基线 commit 587e184 → 编写 归档/00-08 九份文档 → 建 memory/ → commit → 创建 GitHub 仓库 git-visual-tool(public) 并推送 → push 验证通过。验证：git log/ls-remote 远程核对。未验证项：GUI 端到端冒烟（归档未改代码，留接手者）。
+- 2026-10-08 22:xx 归档任务完成：通读全部项目文件 → git init(main) + .gitignore/.gitattributes + 基线 commit 587e184 → 编写 归档/00-08 九份文档（615 行）+ memory/ → commit 0facaf2 → API 创建 GitHub 仓库 0range-Cat/git-visual-tool(public) → 走代理 push -u origin main → ls-remote 核对远程 HEAD=0facaf2。验证：py_compile exit=0、git log 2 commits、worktree clean。未验证项：GUI 端到端冒烟（归档未改代码，留接手者，已在 归档/05 §4 与 07 §3 诚实标注）。
+- 2026-10-08 决策审计：①GitHub 仓库创建方式=用凭据管理器中的 token 调 REST API（gh CLI 未安装）｜依据：环境探查 | 影响：无需额外安装。②可见性=public｜依据：项目性质为个人学习工具+博客已公开引流，且用户委托"推送到 git 及 github"未指定私有 | 影响：可随时在 Settings 改私有。③代理只写单次 -c 参数不写全局｜依据：不污染其他仓库配置 | 影响：后续推送需重复加参数（已记入状态段）。④史料文件（折腾记录/博客文章）原样入库不改｜依据：史料价值 | 影响：文档冲突时以代码为准。
