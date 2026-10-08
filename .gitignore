@@ -1,0 +1,16 @@
+# 运行时生成的文件（工具自动创建，不入库）
+git_tool.log
+git_tool_config.json
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 打包产物
+build/
+dist/
+*.spec
+
+# 系统文件
+Thumbs.db
+Desktop.ini

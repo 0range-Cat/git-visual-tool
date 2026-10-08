@@ -1,0 +1,6 @@
+# 换行符策略：
+# - 启动Git工具.bat 必须保持 CRLF（cmd.exe 解析批处理要求 CRLF，LF 会导致闪退——详见 折腾记录.md 第二轮折腾）
+# - 其他文本文件入库统一 LF，由 git 在检出时按平台转换
+* text=auto
+*.bat text eol=crlf
+*.png binary
